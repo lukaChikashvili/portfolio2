@@ -7,10 +7,10 @@ export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   
-    
+    const [changePosition, setChangePosition] = useState(false);
 
     return (
-        <UserContext.Provider value = {{ }}>
+        <UserContext.Provider value = {{ changePosition, setChangePosition}}>
           {children}
         </UserContext.Provider>
     )

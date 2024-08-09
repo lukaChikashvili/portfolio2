@@ -9,10 +9,10 @@ const CanvasElement = () => {
        
          <ScrollControls pages={3} damping={0.1}>
 
-        <Scroll>
+       
         <Lights />
      <Home />
-     </Scroll>
+  
      </ScrollControls>
     </Canvas>
   )

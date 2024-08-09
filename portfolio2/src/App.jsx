@@ -14,7 +14,12 @@ function App() {
      </Routes>
 
      <div className="absolute bg-transparent top-0 left-0 w-full min-h-screen -z-10">
-        sfsf
+         <div className="absolute right-12 top-56 flex flex-col gap-4">
+            <button>001</button>
+            <button>002</button>
+            <button>003</button>
+            <button>004</button>
+         </div>
        </div>
     </>
   )

@@ -1,7 +1,8 @@
 
-import { Text3D, useGLTF, useMatcapTexture } from '@react-three/drei'
+import { Text3D, useGLTF, useMatcapTexture, useScroll } from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber';
 import React, { useEffect } from 'react'
-
+import gsap from 'gsap'
 
 
 const Home = () => {
@@ -12,6 +13,12 @@ const [ texture ] = useMatcapTexture('AB2D08_C35E5A_C75522_C56C70', 256);
 
 // car 3d model
 const car = useGLTF('./car.glb');
+
+// camera
+const { camera } = useThree();
+const scroll = useScroll();
+
+
 
      
   return (

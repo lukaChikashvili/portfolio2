@@ -9,7 +9,13 @@ function App() {
     <>
      <Routes>
        <Route path="/" element = {<CanvasElement />} />
+
+    
      </Routes>
+
+     <div className="absolute bg-transparent top-0 left-0 w-full min-h-screen -z-10">
+        sfsf
+       </div>
     </>
   )
 }

@@ -6,8 +6,6 @@ import { UserContext } from "./context/UserContext"
 
 function App() {
  
-  // retrieve state from context
-  const { setFirstPage, setSecondPage, setThirdPage, firstPage} = useContext(UserContext);
 
 
   return (

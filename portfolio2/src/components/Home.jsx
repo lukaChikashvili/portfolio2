@@ -1,8 +1,9 @@
-import { Float, useGLTF } from "@react-three/drei"
+import { Float, Html, Text3D, useGLTF } from "@react-three/drei"
 import { useContext, useEffect, useRef, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import gsap from 'gsap'
-
+import { EffectComposer, Glitch, Noise, ToneMapping, Vignette } from '@react-three/postprocessing'
+import { BlendFunction } from "postprocessing"
 
 const Home = () => {
 
@@ -195,10 +196,19 @@ const Home = () => {
      
   return (
      <>
+
+     <EffectComposer>
+
+        <ToneMapping />
+       <Noise  />
+     </EffectComposer>
+
    <Float rotationIntensity={ 0.25 }>
       <mesh ref={first} position={[-10, 0, 0]} castShadow>
         <sphereGeometry />
         <meshLambertMaterial />
+
+      
       </mesh>
 
       <mesh ref={second} position={[0, -2, 0]} castShadow>
@@ -247,6 +257,8 @@ const Home = () => {
         <meshLambertMaterial  />
       </mesh>
       </Float>
+
+  
      </>
   )
 }

@@ -30,7 +30,15 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
-span {
+.span {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #ccc;
 }
+
+button {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    
+}
+
+

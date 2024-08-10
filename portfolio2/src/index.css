@@ -35,10 +35,27 @@
     -webkit-text-stroke-color: #ccc;
 }
 
+
 button {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    
+    position: relative;
 }
+
+button::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.7s ease;
+
+}
+
+button:hover::after {
+    width: 100%;
+}
+
+
 
 

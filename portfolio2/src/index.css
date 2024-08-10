@@ -20,8 +20,14 @@
 .title {
  
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #191919;
+    -webkit-text-stroke-color: black;
     text-transform: uppercase;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    
+}
+
+.title2 {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 span {

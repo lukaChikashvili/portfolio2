@@ -195,7 +195,7 @@ const Home = () => {
      
   return (
      <>
-   <Float rotationIntensity={ 0.2 }>
+   <Float rotationIntensity={ 0.25 }>
       <mesh ref={first} position={[-10, 0, 0]} castShadow>
         <sphereGeometry />
         <meshLambertMaterial />

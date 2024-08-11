@@ -199,8 +199,8 @@ const Home = () => {
 
      <EffectComposer>
 
-        <ToneMapping />
-       <Noise />
+     
+      
      </EffectComposer>
 
    <Float rotationIntensity={ 0.25 }>

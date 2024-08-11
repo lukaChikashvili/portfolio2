@@ -4,10 +4,11 @@ import { UserContext } from "../context/UserContext"
 import gsap from 'gsap'
 import { EffectComposer, Glitch, Noise, ToneMapping, Vignette } from '@react-three/postprocessing'
 import { BlendFunction } from "postprocessing"
+import * as THREE from 'three'
 
 const Home = () => {
 
-  const { changePosition } = useContext(UserContext);
+  const { changePosition, projects } = useContext(UserContext);
 
   let first = useRef();
   let second = useRef();
@@ -21,7 +22,11 @@ const Home = () => {
   let ten = useRef();
 
 
+  
+  
   useEffect(() => {
+
+
     
       if(changePosition) {
          gsap.to(first.current.position, {
@@ -145,7 +150,7 @@ const Home = () => {
 
          gsap.to(sixth.current.position, {
           x: -16,
-          y: 0,
+          y: 4,
           z: 3,
           duration: 2,
           ease: 'power2.inOut'
@@ -192,8 +197,101 @@ const Home = () => {
          });
       }
 
-  }, [changePosition])
+// projects
+      if(projects) {
+        gsap.to(first.current.position, {
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut',
+          
+         });
+
+         gsap.to(second.current.position, {
+          x: -10,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(third.current.position, {
+          x: -10,
+          y: 2,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(fourth.current.position, {
+          x: -12,
+          y: 4,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(fifth.current.position, {
+          x: -16,
+          y: 4,
+          z: 5,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(sixth.current.position, {
+          x: -15,
+          y: 2,
+          z: 6,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+        
+         gsap.to(seven.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(eight.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(nine.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(ten.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+        
+      
+        
+
+
+      }
+
+   
+
+  }, [changePosition, projects]);
      
+
+
+
   return (
      <>
 
@@ -204,6 +302,7 @@ const Home = () => {
      </EffectComposer>
 
    <Float rotationIntensity={ 0.25 }>
+    
       <mesh ref={first} position={[-10, 0, 0]} castShadow>
         <sphereGeometry />
         <meshLambertMaterial />
@@ -256,6 +355,7 @@ const Home = () => {
         <sphereGeometry />
         <meshLambertMaterial  />
       </mesh>
+      
       </Float>
 
   

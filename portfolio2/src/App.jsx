@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import Loader from "./components/Loader";
 
 function App() {
-  const { setChangePosition } = useContext(UserContext);
+  const { setChangePosition, setProjects } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -30,11 +30,24 @@ function App() {
         ease: "power2.inOut",
         
       });
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [showLoader]);
 
+ 
+
+  const handleText = () => {
+   gsap.to('.text', {
+    opacity: 0,
+    display: "none",
+    duration: 1.5,
+    ease: "power2.inOut",
+   });
+
+   setProjects(true);
+
+  }
   return (
     <>
       <Header />
@@ -46,11 +59,11 @@ function App() {
       </Routes>
 
       {!showLoader && (
-        <div className="absolute top-0 left-0 bg-transparent w-full h-screen flex flex-col items-center justify-center gap-8 -mt-4">
+        <div className="absolute top-0 left-0 bg-transparent w-full h-screen flex flex-col items-center justify-center gap-8 -mt-4 text">
           <h1 className="text-6xl text-white title opacity-0">
             Hey! I'm{" "}
             <span
-              className="text-black span duration-500 ease hover:text-[#FF5F00]"
+              className="text-black span duration-500 ease hover:text-[#F5F7F8]"
               onMouseEnter={() => setChangePosition(true)}
               onMouseLeave={() => setChangePosition(false)}
             >
@@ -67,6 +80,7 @@ function App() {
             <button
               className="text-xl text-white flex gap-2 items-center"
               data-replace="see my projects"
+              onClick={handleText}
             >
               <ArrowRight /> see my projects
             </button>
@@ -80,6 +94,8 @@ function App() {
           </div>
         </div>
       )}
+
+      
     </>
   );
 }

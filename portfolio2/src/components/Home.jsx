@@ -290,8 +290,9 @@ const Home = () => {
            });
   
            gsap.to(second.current.position, {
-            x: -12,
-            z: 4,
+            x: -10,
+            y: 0.5,
+            z: 3,
             duration: 2,
             ease: 'power2.inOut'
            });
@@ -361,11 +362,200 @@ const Home = () => {
             ease: 'power2.inOut'
            });
          }
+
+
+          // third project
+          if(currentProjectIndex === 2) {
+
+            gsap.to(first.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(second.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(third.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fourth.current.position, {
+              z: 4,
+              y: 4, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fifth.current.position, {
+              z: 6,
+              y: 5, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(sixth.current.position, {
+              z: 6,
+              y: -2, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(seven.current.position, {
+              z: 6,
+              y: 1.3,
+              x: -13, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+    
+            
+           }
+
+            // fourth project
+          if(currentProjectIndex === 3) {
+
+            gsap.to(first.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(second.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(third.current.position, {
+              x: -14,
+              z: 6,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fourth.current.position, {
+              z: 5,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fifth.current.position, {
+              z: 6,
+              y: 5, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(sixth.current.position, {
+              z: 6,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(seven.current.position, {
+              z: 4,
+              y: 2,
+              x: -10, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+    
+            
+           }
+
+             // fifth project
+          if(currentProjectIndex === 4) {
+
+            gsap.to(first.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(second.current.position, {
+              y: 5,
+              x: -12,
+              z: 2,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(third.current.position, {
+              x: -14,
+              z: 5,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fourth.current.position, {
+              z: 5,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fifth.current.position, {
+              z: 6,
+              y: 5, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(sixth.current.position, {
+              z: 6,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(seven.current.position, {
+              z: 3,
+              y: 2,
+              x: -10, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+    
+            
+           }
+
+         
         
 
 
       }
 
+
+      
    
 
   }, [changePosition, projects, currentProjectIndex]);

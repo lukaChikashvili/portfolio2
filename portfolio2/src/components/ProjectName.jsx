@@ -89,6 +89,50 @@ const ProjectName = ({ projects }) => {
         }
     }, [currentProjectIndex]); 
 
+
+    // github links
+    const showGithub = () => {
+        if(currentProjectIndex === 0) {
+            window.open("https://github.com/lukaChikashvili/MixMaster", "_blank", "noopener,noreferrer");
+            
+        }else if(currentProjectIndex === 1) {
+            window.open("https://github.com/lukaChikashvili/neoWriters2", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 2) {
+            window.open("https://github.com/lukaChikashvili/EternalMemories", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 3) {
+            window.open("https://github.com/lukaChikashvili/Circus-Mircus", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 4) {
+            window.open("https://github.com/lukaChikashvili/vangadamus", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 5) {
+            window.open("https://github.com/lukaChikashvili/cigars", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 6) {
+            window.open("https://github.com/lukaChikashvili/saflavis-qva", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 7) {
+            window.open("https://github.com/lukaChikashvili/Portfolio", "_blank", "noopener,noreferrer");
+        }
+    }
+
+    // live links
+    const showLive = () => {
+        if(currentProjectIndex === 0) {
+        window.open("https://mix-master-seven.vercel.app/", "_blank", "noopener,noreferrer");
+            
+        }else if(currentProjectIndex === 1) {
+            window.open("https://neowriters-front.onrender.com", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 2) {
+            window.open("https://eternal-memories.onrender.com/", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 3) {
+            window.open("https://circus-mircus.netlify.app/", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 4) {
+            window.open("https://vangadamus.vercel.app/", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 5) {
+            window.open("https://cigars-kappa.vercel.app/", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 6) {
+            window.open("https://saflavis-qva.vercel.app/", "_blank", "noopener,noreferrer");
+        }else if(currentProjectIndex === 7) {
+            window.open("https://portfolio-ten-sigma-68.vercel.app/", "_blank", "noopener,noreferrer");
+        }
+    }
     
     const handleNext = () => {
 
@@ -125,8 +169,10 @@ const ProjectName = ({ projects }) => {
                     ))}
                 </div>
                 <div className='text-white flex items-center gap-8 text-2xl'>
-                    <button className='flex items-center gap-4 btn1'>Github <ArrowRight /></button>
-                    <button className='flex items-center gap-4 btn2'>Live <ArrowRight /></button>
+                    <button className='flex items-center gap-4 btn1' 
+                       onClick={showGithub}
+                    >Github <ArrowRight /></button>
+                    <button className='flex items-center gap-4 btn2' onClick={showLive}>Live <ArrowRight /></button>
                 </div>
                 <h2 className='text-white cursor-pointer absolute right-12 bottom-12' onClick={handleNext}>Next</h2>
             </div>

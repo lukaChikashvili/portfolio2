@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Particles from './Particles'
+import { UserContext } from "../context/UserContext"
 
 const Pointed = () => {
+  const { projects } = useContext(UserContext);
   return (
    <>
-     <Particles />
+     {projects && <Particles /> }
    </>
   )
 }

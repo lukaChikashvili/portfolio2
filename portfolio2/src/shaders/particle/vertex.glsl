@@ -11,7 +11,7 @@ void main()
 vec3 newPosition = position;
 
 float displacementIntensity = texture(uDisplacementTexture, uv).r; 
-displacementIntensity = smoothstep(0.1, 1.0, displacementIntensity);
+displacementIntensity = smoothstep(0.1, 0.3, displacementIntensity);
 
 vec3 displacement = vec3(
     cos(aAngle) * 0.2,
@@ -22,7 +22,7 @@ vec3 displacement = vec3(
 displacement = normalize(displacement);
 
 displacement *= displacementIntensity;
-displacement *= 3.0;
+displacement *= 2.0;
 displacement *= aIntensity;
 newPosition += displacement; 
 
@@ -34,7 +34,7 @@ newPosition += displacement;
     float pictureIntensity = texture(uPictureTexture, uv).r;
 
     gl_Position = projectedPosition;
-    gl_PointSize = pictureIntensity * 10.0;
+    gl_PointSize = pictureIntensity * 14.0;
 
     // varyings
     vColor = vec3(pow(pictureIntensity, 2.0));

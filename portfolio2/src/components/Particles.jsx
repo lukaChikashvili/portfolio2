@@ -27,11 +27,11 @@ const Particles = () => {
 
    const displacementTexture = new THREE.CanvasTexture(canvas);
 
-  const texture = useTexture('./images.jpg');
+  const texture = useTexture('./images.png');
    
     const particleRef = useRef();
 
-    const particleGeometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+    const particleGeometry = new THREE.PlaneGeometry(10, 5, 128, 128);
 
      const intensityArr = new Float32Array(particleGeometry.attributes.position.count);
      const anglesArr = new Float32Array(particleGeometry.attributes.position.count);
@@ -60,6 +60,7 @@ const Particles = () => {
 
     const screenCursor = new THREE.Vector2(9999, 9999);
     const canvasCursor = new THREE.Vector2(9999, 9999);
+    const canvasCursorPrevious = new THREE.Vector2(9999, 9999);
 
       window.addEventListener('pointermove', (e) => {
         screenCursor.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -95,13 +96,19 @@ const Particles = () => {
     context.globalAlpha = 0.02;
      context.fillRect(0, 0, canvas.width, canvas.height);
 
+
+     // speed alpha
+     const cursorDistance = canvasCursorPrevious.distanceTo(canvasCursor);
+     canvasCursorPrevious.copy(canvasCursor);
+     const alpha = Math.min(cursorDistance * 0.1, 1);
+
        context.globalCompositeOperation = 'lighten'
-       context.globalAlpha = 1;
+       context.globalAlpha = alpha;
         context.drawImage(
           glowImage, 
           canvasCursor.x,
           canvasCursor.y,
-          10, 10
+          25, 25
         );
 
 
@@ -114,9 +121,9 @@ const Particles = () => {
 
   return (
    <>
-     <primitive ref = {particleRef} object={new THREE.Points(particleGeometry, particleMaterial)} rotation = {[ 0, 0.7, 0 ]} />
+     <primitive ref = {particleRef} object={new THREE.Points(particleGeometry, particleMaterial)} rotation = {[ 0, 0.5, 0 ]}  position = {[ 0, 0, 0 ]} />
      <mesh rotation = {[ 0, 0.7, 0 ]} ref={interactiveRef}>
-       <planeGeometry args = {[10, 10]} />
+       <planeGeometry args = {[10, 5]} />
        <meshBasicMaterial visible = {false}/>
      </mesh>
    </>

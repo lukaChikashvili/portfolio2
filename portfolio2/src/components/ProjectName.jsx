@@ -169,10 +169,11 @@ const ProjectName = ({ projects }) => {
                     ))}
                 </div>
                 <div className='text-white flex items-center gap-8 text-2xl'>
-                    <button className='flex items-center gap-4 btn1' 
+                    <button className='flex items-center gap-4 btn1  ease-in hover:underline hover:underline-offset-8' 
                        onClick={showGithub}
                     >Github <ArrowRight /></button>
-                    <button className='flex items-center gap-4 btn2' onClick={showLive}>Live <ArrowRight /></button>
+                    <button className='flex items-center gap-4 btn2  hover:underline hover:underline-offset-8' 
+                    onClick={showLive}>Live <ArrowRight /></button>
                 </div>
                 <h2 className='text-white cursor-pointer absolute right-12 bottom-12' onClick={handleNext}>Next</h2>
             </div>

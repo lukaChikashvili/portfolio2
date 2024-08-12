@@ -9,7 +9,7 @@ import Loader from "./components/Loader";
 import ProjectName from "./components/ProjectName";
 
 function App() {
-  const { setChangePosition, setProjects, projects } = useContext(UserContext);
+  const { setChangePosition, setProjects, projects, project2 } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -97,7 +97,14 @@ function App() {
       )}
 
       
-      {projects && <ProjectName name="MixMaster" stack1="React" stack2="Three.js"  stack3="Tailwind.css" stack4="Material.UI" />}
+      {projects && <ProjectName projects={[
+    { name: 'MixMaster', stacks: ['React', 'Three.js', 'Tailwind.css', 'MaterialUI'] },
+    { name: 'NeoWriters', stacks: ['React', 'Tailwind.css', 'Node.js',  'MongoDB'] },
+    { name: 'Eternal Memories', stacks: ['React', 'Three.js', 'Tailwind.css',  'Node.js',  'MongoDB'] },
+    
+]} />}
+
+      
     </>
   );
 }

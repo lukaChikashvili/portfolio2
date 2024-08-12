@@ -13,10 +13,14 @@ const UserProvider = ({ children }) => {
     // display projects
     const [projects, setProjects] = useState(false);
  
+   // current project index
+   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
     return (
         <UserContext.Provider value = {{ changePosition, 
-        setChangePosition, changeTitle, setChangeTitle, projects, setProjects}}>
+        setChangePosition, changeTitle, setChangeTitle, projects, setProjects,
+        currentProjectIndex, setCurrentProjectIndex
+        }}>
           {children}
         </UserContext.Provider>
     )

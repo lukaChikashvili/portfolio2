@@ -8,7 +8,7 @@ import * as THREE from 'three'
 
 const Home = () => {
 
-  const { changePosition, projects } = useContext(UserContext);
+  const { changePosition, projects, currentProjectIndex } = useContext(UserContext);
 
   let first = useRef();
   let second = useRef();
@@ -279,7 +279,88 @@ const Home = () => {
          });
 
         
-      
+      // second project
+         if(currentProjectIndex === 1) {
+
+          gsap.to(first.current.position, {
+            z: 5,
+            duration: 2,
+            ease: 'power2.inOut',
+            
+           });
+  
+           gsap.to(second.current.position, {
+            x: -12,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(third.current.position, {
+            x: -10,
+            y: 2,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(fourth.current.position, {
+            x: -12,
+            y: 4,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(fifth.current.position, {
+            x: -16,
+            y: 4.5,
+            z: 5,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(sixth.current.position, {
+            x: -18,
+            y: 4.5,
+            z: 6,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+          
+           gsap.to(seven.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(eight.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(nine.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(ten.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+         }
         
 
 
@@ -287,7 +368,7 @@ const Home = () => {
 
    
 
-  }, [changePosition, projects]);
+  }, [changePosition, projects, currentProjectIndex]);
      
 
 

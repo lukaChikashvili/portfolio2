@@ -1,14 +1,17 @@
 
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import vertex from '../shaders/particle/vertex.glsl';
 import fragment from '../shaders/particle/fragment.glsl';
 import * as THREE from 'three'
 import { useTexture } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber';
 import gsap from 'gsap';
+import { UserContext } from '../context/UserContext';
 
 
 const Particles = () => {
+
+  const { currentProjectIndex } = useContext(UserContext);
 
 
     // 2d canvas
@@ -16,6 +19,12 @@ const Particles = () => {
     canvas.width = 128;
     canvas.height = 128;
    
+    // images
+    const textureImages = [
+      './images.png',
+      './books.png',
+      './example.png'
+    ];
     
 
     // context
@@ -28,7 +37,7 @@ const Particles = () => {
 
    const displacementTexture = new THREE.CanvasTexture(canvas);
 
-  const texture = useTexture('./images.png');
+  const texture = useTexture(textureImages[currentProjectIndex]);
    
     const particleRef = useRef();
 
@@ -124,11 +133,11 @@ const Particles = () => {
       useEffect(() => {
         gsap.to(particleMaterial.uniforms.uOpacity, {
           value: 1,
-          duration: 3,
+          duration: 1.5,
           ease: 'power2.inOut',
-          delay: 1.5
+          delay: 0.5
         })
-      }, [particleMaterial])
+      }, [particleMaterial, currentProjectIndex])
 
 
   return (

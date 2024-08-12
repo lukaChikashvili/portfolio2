@@ -1,10 +1,11 @@
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import vertex from '../shaders/particle/vertex.glsl';
 import fragment from '../shaders/particle/fragment.glsl';
 import * as THREE from 'three'
 import { useTexture } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber';
+import gsap from 'gsap';
 
 
 const Particles = () => {
@@ -51,8 +52,11 @@ const Particles = () => {
        fragmentShader: fragment,
        uniforms: {
         uPictureTexture: new THREE.Uniform(texture),
-        uDisplacementTexture: new THREE.Uniform(displacementTexture)
-       }
+        uDisplacementTexture: new THREE.Uniform(displacementTexture),
+        uOpacity: { value: 0 },
+       
+       },
+       transparent: true
     });
 
     // raycaster
@@ -117,12 +121,20 @@ const Particles = () => {
 
       })
 
+      useEffect(() => {
+        gsap.to(particleMaterial.uniforms.uOpacity, {
+          value: 1,
+          duration: 3,
+          ease: 'power2.inOut',
+          delay: 1.5
+        })
+      }, [particleMaterial])
 
 
   return (
    <>
-     <primitive ref = {particleRef} object={new THREE.Points(particleGeometry, particleMaterial)} rotation = {[ 0, 0.5, 0 ]}  position = {[ 0, 0, 0 ]} />
-     <mesh rotation = {[ 0, 0.7, 0 ]} ref={interactiveRef}>
+     <primitive ref = {particleRef} transparent = {true} object={new THREE.Points(particleGeometry, particleMaterial)} rotation = {[ 0, 0.5, 0 ]}  position = {[ 1, 1.5, 0 ]} />
+     <mesh rotation = {[ 0, 0.7, 0 ]}  position = {[ 1, 1.5, 0 ]} ref={interactiveRef}>
        <planeGeometry args = {[10, 5]} />
        <meshBasicMaterial visible = {false}/>
      </mesh>

@@ -295,11 +295,7 @@ const Home = () => {
   return (
      <>
 
-     <EffectComposer>
 
-     
-      
-     </EffectComposer>
 
    <Float rotationIntensity={ 0.25 }>
     

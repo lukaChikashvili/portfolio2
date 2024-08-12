@@ -15,6 +15,7 @@
     background-color: #232D3F;
     background-image: url(http://www.transparenttextures.com/patterns/simple-horizontal-light.png);
     font-family: 'Alishia Mekayla', sans-serif;
+    
 }
 
 .title {
@@ -87,5 +88,7 @@ button:hover::after {
   }
 
 
-
+.project-name h2, .stacks, .btn1, .btn2 {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
 

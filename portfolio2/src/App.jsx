@@ -6,9 +6,10 @@ import gsap from "gsap";
 import Header from "./components/Header";
 import { ArrowRight } from "lucide-react";
 import Loader from "./components/Loader";
+import ProjectName from "./components/ProjectName";
 
 function App() {
-  const { setChangePosition, setProjects } = useContext(UserContext);
+  const { setChangePosition, setProjects, projects } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -96,6 +97,7 @@ function App() {
       )}
 
       
+      {projects && <ProjectName name="MixMaster" stack1="React" stack2="Three.js"  stack3="Tailwind.css" stack4="Material.UI" />}
     </>
   );
 }

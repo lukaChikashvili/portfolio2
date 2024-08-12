@@ -23,7 +23,11 @@ const Particles = () => {
     const textureImages = [
       './images.png',
       './books.png',
-      './example.png'
+      './example.png',
+      './circus.png',
+      './fortune.png',
+      './cigar.jpg',
+      './skeleton.png'
     ];
     
 

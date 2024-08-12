@@ -101,6 +101,10 @@ function App() {
     { name: 'MixMaster', stacks: ['React', 'Three.js', 'Tailwind.css', 'MaterialUI'] },
     { name: 'NeoWriters', stacks: ['React', 'Tailwind.css', 'Node.js',  'MongoDB'] },
     { name: 'Eternal Memories', stacks: ['React', 'Three.js', 'Tailwind.css',  'Node.js',  'MongoDB'] },
+    { name: 'Circus Mircus', stacks: ['Next.js', 'Typescript', 'Tailwind.css',  'GSAP'] },
+    { name: 'Vangadamus', stacks: ['React', 'Typescript', 'Three.js',  'React-three/rapier'] },
+    { name: 'Cigars', stacks: ['React',  'Three.js', 'GLSL',  'Lucide-react'] },
+    { name: 'Paradise', stacks: ['React',  'Three.js', 'GLSL',  'Tailwind.css',  'GSAP'] },
     
 ]} />}
 

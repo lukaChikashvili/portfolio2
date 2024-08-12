@@ -9,7 +9,7 @@ const ProjectName = ({ projects }) => {
   
     const currentProject = projects[currentProjectIndex];
 
-    console.log(currentProjectIndex)
+ 
 
     useEffect(() => {
         gsap.to('h2', {
@@ -47,6 +47,46 @@ const ProjectName = ({ projects }) => {
             ease: "power2.inOut",
             delay: 1.6
         });
+
+
+
+        if(projects === false) {
+            gsap.to('h2', {
+                opacity: 0,
+                y: -2,
+                clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+                duration: 1.5,
+                ease: "power2.inOut",
+                delay: 1
+            });
+    
+            gsap.to('.stacks', {
+                opacity: 0,
+                y: -2,
+                clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+                duration: 1.5,
+                ease: "power2.inOut",
+                delay: 1.3
+            });
+    
+            gsap.to('.btn1', {
+                opacity: 0,
+                y: -2,
+                clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+                duration: 1.5,
+                ease: "power2.inOut",
+                delay: 1.5
+            });
+    
+            gsap.to('.btn2', {
+                opacity: 0,
+                y: -2,
+                clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+                duration: 1.5,
+                ease: "power2.inOut",
+                delay: 1.6
+            });
+        }
     }, [currentProjectIndex]); 
 
     

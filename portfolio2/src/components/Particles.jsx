@@ -27,7 +27,8 @@ const Particles = () => {
       './circus.png',
       './fortune.png',
       './cigar.jpg',
-      './skeleton.png'
+      './skeleton.png',
+      './port.jpg'
     ];
     
 

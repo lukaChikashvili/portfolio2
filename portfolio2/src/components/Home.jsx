@@ -548,7 +548,161 @@ const Home = () => {
             
            }
 
-         
+                // sixth project
+          if(currentProjectIndex === 5) {
+
+            gsap.to(first.current.position, {
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(second.current.position, {
+              y: -1.5,
+              x: -12,
+              z: 4,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(third.current.position, {
+              x: -14,
+              z: 5.5,
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fourth.current.position, {
+              z: 5,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(fifth.current.position, {
+              z: 6,
+              y: 5, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(sixth.current.position, {
+              z: 6,
+              y: -20, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(seven.current.position, {
+              z: 5.5,
+              y: 0,
+              x: -15, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+
+             gsap.to(eight.current.position, {
+              z: 5.5,
+              y: -2,
+              x: -15, 
+              duration: 2,
+              ease: 'power2.inOut',
+              
+             });
+    
+            
+           }
+
+         // seventh project
+         if(currentProjectIndex === 6) {
+          gsap.to(first.current.position, {
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut',
+            
+           });
+  
+           gsap.to(second.current.position, {
+            x: -10,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(third.current.position, {
+            x: -10,
+            y: 2,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(fourth.current.position, {
+            x: -12,
+            y: 4,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(fifth.current.position, {
+            x: -16,
+            y: 5,
+            z: 5.5,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(sixth.current.position, {
+            x: -15,
+            y: 4.5,
+            z: 7,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+          
+           gsap.to(seven.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(eight.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(nine.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+  
+           gsap.to(ten.current.position, {
+            x: -20,
+            y: -20,
+            z: 4,
+            duration: 2,
+            ease: 'power2.inOut'
+           });
+         }
+        
+
         
 
 

@@ -20,11 +20,17 @@ const UserProvider = ({ children }) => {
 
    const [showMenu, setShowMenu] = useState(false);
 
+   // menu texts
+   const [home, setHome] = useState(false);
+   const [about, setAbout] = useState(false);
+   const [myProject, setMyProject] = useState(false);
+   const [contact, setContact] = useState(false);
+
     return (
         <UserContext.Provider value = {{ changePosition, 
         setChangePosition, changeTitle, setChangeTitle, projects, setProjects,
         currentProjectIndex, setCurrentProjectIndex, hideText, setHideText,
-        showMenu, setShowMenu
+        showMenu, setShowMenu, home, setHome, about, setAbout, myProject, setMyProject, contact, setContact
         }}>
           {children}
         </UserContext.Provider>

@@ -10,7 +10,7 @@ import ProjectName from "./components/ProjectName";
 import Menu from "./components/Menu";
 
 function App() {
-  const { setChangePosition, setProjects, projects , showMenu, closed} = useContext(UserContext);
+  const { setChangePosition, setProjects, projects , showMenu, closed, setShowMenu, setClosed } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -76,7 +76,11 @@ function App() {
 
 
 
-    setProjects(false)
+    setProjects(false);
+    setShowMenu(false);
+    setClosed(false);
+    
+    
     
   };
 
@@ -98,12 +102,24 @@ function App() {
         ease: "power2.inOut",
        });
      }
-
     
+     if(closed) {
+      gsap.to(".text", {
+        opacity: 0,
+        clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+        duration: 1.5,
+        ease: "power2.inOut",
+        onComplete: () => {
+            setProjects(true); 
+            setShowMenu(false); 
+            setClosed(true); 
+        }
+    });
+     }
 
      
 
-  }, [showMenu])
+  }, [showMenu, closed])
   return (
     <>
       <Header />

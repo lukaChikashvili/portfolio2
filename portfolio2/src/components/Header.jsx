@@ -5,17 +5,23 @@ import gsap from 'gsap'
 
 const Header = () => {
     
-  const { setShowMenu, showMenu, setClosed } = useContext(UserContext);
+  const { setShowMenu, showMenu, setClosed, setProjects, currentProjectIndex, projects } = useContext(UserContext);
 
 
   const closeMenu = () => {
 
     
-  setShowMenu(false);
-
+    setShowMenu(false);
+    setProjects(false)
    
+   
+  
+    
+  
+  }
 
-    setClosed(true);
+  const openMenu = () => {
+    setShowMenu(true);
     
   
   }
@@ -26,7 +32,7 @@ const Header = () => {
     <div className='flex header'>
      
         <div className='absolute text-white top-8 text-2xl right-12 cursor-pointer z-10 '>
-           <p >{showMenu ? <X className='icon' onClick={closeMenu} /> : <Menu onClick={() => setShowMenu(true)} /> }</p>
+           <p style={{display: projects ? "none" : "flex"}}>{showMenu ? <X className='icon' onClick={closeMenu} /> : <Menu onClick={openMenu}  /> }</p>
         </div>
     </div>
   )

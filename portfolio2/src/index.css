@@ -88,7 +88,7 @@ button:hover::after {
   }
 
 
-.project-name h2, .stacks, .btn1, .btn2 {
+.project-name h2, .stacks, .btn1, .btn2, .menu h2 {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 

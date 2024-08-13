@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Loader from "./components/Loader";
 import ProjectName from "./components/ProjectName";
+import Menu from "./components/Menu";
 
 function App() {
   const { setChangePosition, setProjects, projects , showMenu} = useContext(UserContext);
@@ -151,7 +152,7 @@ function App() {
 
       {projects && <span className="absolute text-white text-xl duration-500 ease-in hover:opacity-50  top-12 left-12 cursor-pointer flex items-center gap-4 justify-center " onClick={backToMain}><ArrowLeft /> Back</span>}
 
-
+{showMenu && <Menu />}
 
     </>
   );

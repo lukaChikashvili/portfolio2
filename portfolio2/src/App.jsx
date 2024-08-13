@@ -10,7 +10,7 @@ import ProjectName from "./components/ProjectName";
 import Menu from "./components/Menu";
 
 function App() {
-  const { setChangePosition, setProjects, projects , showMenu} = useContext(UserContext);
+  const { setChangePosition, setProjects, projects , showMenu, closed} = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -74,6 +74,8 @@ function App() {
       ease: "power2.inOut",
     });
 
+
+
     setProjects(false)
     
   };
@@ -88,7 +90,19 @@ function App() {
        });
 
        
+     }else {
+      gsap.to('.text', {
+        opacity: 1,
+        display: "flex",
+        duration: 1.5,
+        ease: "power2.inOut",
+       });
      }
+
+    
+
+     
+
   }, [showMenu])
   return (
     <>

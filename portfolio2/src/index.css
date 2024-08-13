@@ -95,3 +95,7 @@ button:hover::after {
 .header h1 {
   pointer-events: all;
 }
+
+.icon {
+  pointer-events: all;
+}

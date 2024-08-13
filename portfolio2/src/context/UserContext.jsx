@@ -26,11 +26,14 @@ const UserProvider = ({ children }) => {
    const [myProject, setMyProject] = useState(false);
    const [contact, setContact] = useState(false);
 
+   const [closed, setClosed] = useState(false);
+
     return (
         <UserContext.Provider value = {{ changePosition, 
         setChangePosition, changeTitle, setChangeTitle, projects, setProjects,
         currentProjectIndex, setCurrentProjectIndex, hideText, setHideText,
-        showMenu, setShowMenu, home, setHome, about, setAbout, myProject, setMyProject, contact, setContact
+        showMenu, setShowMenu, home, setHome, about, setAbout, myProject, setMyProject, contact, setContact,
+        closed, setClosed
         }}>
           {children}
         </UserContext.Provider>

@@ -18,10 +18,13 @@ const UserProvider = ({ children }) => {
 
    const [hideText, setHideText] = useState(false);
 
+   const [showMenu, setShowMenu] = useState(false);
+
     return (
         <UserContext.Provider value = {{ changePosition, 
         setChangePosition, changeTitle, setChangeTitle, projects, setProjects,
-        currentProjectIndex, setCurrentProjectIndex, hideText, setHideText
+        currentProjectIndex, setCurrentProjectIndex, hideText, setHideText,
+        showMenu, setShowMenu
         }}>
           {children}
         </UserContext.Provider>

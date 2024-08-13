@@ -160,7 +160,7 @@ const ProjectName = ({ projects }) => {
     };
 
     return (
-        <div className='absolute bg-transparent w-full h-screen top-0 left-0 flex items-center justify-center project-name'>
+        <div className='absolute bg-transparent w-full h-screen top-0 left-0 flex items-center justify-center project-name mt-6'>
             <div className='flex flex-col gap-8'>
                 <h2 className='text-6xl mt-96 text-white underline underline-offset-8 decoration-2 opacity-0'>{currentProject.name}</h2>
                 <div className='flex gap-4 stacks'>

@@ -8,7 +8,7 @@ import * as THREE from 'three'
 
 const Home = () => {
 
-  const { changePosition, projects, currentProjectIndex } = useContext(UserContext);
+  const { changePosition, projects, currentProjectIndex, showMenu } = useContext(UserContext);
 
   let first = useRef();
   let second = useRef();
@@ -704,15 +704,101 @@ const Home = () => {
         
 
         
+       
+
+
 
 
       }
 
 
       
+      if(showMenu) {
+        gsap.to(first.current.position, {
+          z: -4,
+          x: 4,
+          duration: 2,
+          ease: 'power2.inOut',
+          
+         });
+
+         gsap.to(second.current.position, {
+          x: 4,
+          y: 0,
+          z: -4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(third.current.position, {
+          x: 4,
+          y: 0,
+          z: -4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(fourth.current.position, {
+          x: 4,
+          y: 0,
+          z: -4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(fifth.current.position, {
+          x: -16,
+          y: -20,
+          z: 5.5,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(sixth.current.position, {
+          x: -15,
+          y: -20,
+          z: 7,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+        
+         gsap.to(seven.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(eight.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(nine.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+
+         gsap.to(ten.current.position, {
+          x: -20,
+          y: -20,
+          z: 4,
+          duration: 2,
+          ease: 'power2.inOut'
+         });
+      }
+
    
 
-  }, [changePosition, projects, currentProjectIndex]);
+  }, [changePosition, projects, currentProjectIndex, showMenu]);
      
 
 

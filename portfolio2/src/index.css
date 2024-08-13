@@ -92,3 +92,6 @@ button:hover::after {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
+.header h1 {
+  pointer-events: all;
+}

@@ -32,7 +32,7 @@ const Header = () => {
     <div className='flex header'>
      
         <div className='absolute text-white top-8 text-2xl right-12 cursor-pointer z-10 '>
-           <p style={{display: projects ? "none" : "flex"}}>{showMenu ? <X className='icon' onClick={closeMenu} /> : <Menu onClick={openMenu}  /> }</p>
+           <span style={{display: projects ? "none" : "flex"}}>{showMenu ? <X className='icon' onClick={closeMenu} /> : <Menu onClick={openMenu}  /> }</span>
         </div>
     </div>
   )

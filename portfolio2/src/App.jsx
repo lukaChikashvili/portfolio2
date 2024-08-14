@@ -146,6 +146,30 @@ function App() {
         duration: 1.5,
         ease: "power2.inOut",
        });
+     }else {
+      gsap.to(".title", {
+        opacity: 1,
+        pointerEvents: 'auto',
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
+  
+      gsap.to(".title2", {
+        opacity: 1,
+        pointerEvents: 'auto',
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
+  
+      gsap.to('.text', {
+        opacity: 1,
+        display: "flex",
+        pointerEvents: 'auto',
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
      }
 
      

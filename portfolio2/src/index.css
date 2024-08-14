@@ -99,3 +99,7 @@ button:hover::after {
 .icon {
   pointer-events: all;
 }
+
+.aboutme h1, .aboutme h2, .aboutme p {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}

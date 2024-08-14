@@ -132,22 +132,22 @@ function App() {
 
       {!showLoader && (
         <div className="absolute top-0 left-0 bg-transparent w-full h-screen flex flex-col items-center justify-center gap-8 -mt-4 text">
-          <h1 className="text-6xl text-white title opacity-0">
-            Hey! I'm{" "}
-            <span
-              className="text-black span duration-500 ease hover:text-[#F5F7F8]"
-              onMouseEnter={() => setChangePosition(true)}
-              onMouseLeave={() => setChangePosition(false)}
-            >
-              Luka Chikashvili
-            </span>
-          </h1>
-          <p className="text-4xl text-white title2 flex gap-4">
-            <span className="title-span flex items-center gap-4">
-              Front end developer
-            </span>{" "}
-            & Polyglot
-          </p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl gap-2 md:gap-6 flex flex-col md:flex-row text-white title opacity-0">
+    Hey! I'm{" "}
+    <span
+        className="text-black span duration-500 ease hover:text-[#F5F7F8]"
+        onMouseEnter={() => setChangePosition(true)}
+        onMouseLeave={() => setChangePosition(false)}
+    >
+        Luka Chikashvili
+    </span>
+</h1>
+<p className="text-xl md:text-2xl lg:text-3xl text-white title2 flex gap-4">
+    <span className="title-span flex items-center gap-4">
+        Front end developer
+    </span>{" "}
+    & Polyglot
+</p>
           <div className="flex items-center gap-8">
             <button
               className="text-xl text-white flex gap-2 items-center"

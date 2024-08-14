@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { UserContext } from '../context/UserContext';
 
 const Menu = () => {
-  const { showMenu, setHome, setAbout, setMyProject, setContact, closed, setProjects, setClosed, setShowMenu } = useContext(UserContext);
+  const { showMenu, setHome, setAbout, setMyProject, setContact, closed, setClosed  } = useContext(UserContext);
 
   useEffect(() => {
     if (showMenu) {

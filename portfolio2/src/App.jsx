@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import CanvasElement from "./components/CanvasElement";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./context/UserContext";
@@ -9,9 +9,12 @@ import Loader from "./components/Loader";
 import ProjectName from "./components/ProjectName";
 import Menu from "./components/Menu";
 
+
 function App() {
-  const { setChangePosition, setProjects, projects , showMenu, closed, setShowMenu, setClosed } = useContext(UserContext);
+  const { setChangePosition, setProjects, projects , showMenu, closed, setShowMenu, setClosed, setAboutPage, aboutPage } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
+
+ 
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -117,9 +120,39 @@ function App() {
     });
      }
 
+     if(aboutPage) {
+      gsap.to(".title", {
+        opacity: 0,
+        pointerEvents: 'none',
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
+
+      gsap.to(".title2", {
+        opacity: 0,
+        pointerEvents: 'none',
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+        duration: 1.5,
+        ease: "power2.inOut",
+        
+      });
+
+      gsap.to('.text', {
+        opacity: 0,
+        display: "flex",
+        pointerEvents: 'none',
+        duration: 1.5,
+        ease: "power2.inOut",
+       });
+     }
+
      
 
-  }, [showMenu, closed])
+  }, [showMenu, closed, aboutPage]);
+
+
+ 
   return (
     <>
       <Header />
@@ -128,6 +161,7 @@ function App() {
           path="/"
           element={showLoader ? <Loader /> : <CanvasElement />}
         />
+     
       </Routes>
 
       {!showLoader && (
@@ -159,7 +193,7 @@ function App() {
 
             <button
               className="text-xl text-white flex gap-2 items-center"
-              data-replace="who am i?"
+              data-replace="who am i?" onClick={() => setAboutPage(true)} 
             >
               <ArrowRight /> who am i?
             </button>

@@ -22,7 +22,7 @@ const Menu = () => {
   };
 
   return (
-    <div className='absolute w-full h-screen top-0 left-0 flex flex-col gap-8 items-start justify-center px-8 md:px-36 text-3xl md:text-7xl text-white menu'>
+    <div className='absolute w-full h-screen top-0 left-0 flex flex-col gap-8 items-start justify-center px-12 md:px-36 text-5xl md:text-7xl text-white menu'>
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 
           onPointerEnter={() => setHome(true)} 
           onPointerLeave={() => setHome(false)}>
@@ -31,7 +31,7 @@ const Menu = () => {
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 
           onPointerEnter={() => setAbout(true)} 
           onPointerLeave={() => setAbout(false)}>
-        <span className='text-base md:text-xl mt-4 md:mt-6'>//002</span>ABOUT ME
+        <span className='text-base md:text-xl mt-4 md:mt-6'>//002</span>ABOUT 
       </h2>
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 
           onPointerEnter={() => setMyProject(true)} 

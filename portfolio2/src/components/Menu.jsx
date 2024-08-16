@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { UserContext } from '../context/UserContext';
 
 const Menu = () => {
-  const { showMenu, setHome, setAbout, setMyProject, setContact, closed, setClosed  } = useContext(UserContext);
+  const { showMenu, setHome, setAbout, setMyProject, setContact, setProjects, closed, setClosed } = useContext(UserContext);
 
   useEffect(() => {
     if (showMenu) {
@@ -12,13 +12,22 @@ const Menu = () => {
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
         duration: 1.5,
         ease: "power2.inOut",
-        delay: 1
+        stagger: 0.2,
       });
     }
-  }, [showMenu, closed]);
+  }, [showMenu]);
 
   const goToProjects = () => {
-    setClosed(true);
+    gsap.to(".text", {
+      opacity: 0,
+      clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+      duration: 1.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        setProjects(true);
+        setClosed(true);
+      },
+    });
   };
 
   return (

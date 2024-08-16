@@ -1,42 +1,29 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import { Menu, X } from 'lucide-react';
-import gsap from 'gsap'
+import gsap from  'gsap'
 
 const Header = () => {
-    
-  const { setShowMenu, showMenu, setClosed, setProjects, currentProjectIndex, projects } = useContext(UserContext);
+  const { setShowMenu, showMenu, setClosed } = useContext(UserContext);
 
+  const toggleMenu = () => {
+    if (showMenu) {
+      setShowMenu(false);
+      setClosed(false);
 
-  const closeMenu = () => {
-
-    
-    setShowMenu(false);
-    setProjects(false)
-     
-   
-  
-    
-  
-  }
-
-  const openMenu = () => {
-    setShowMenu(true);
-    
-   
-  
-  }
-
-
+    } else {
+      setShowMenu(true);
+      setClosed(false);
+    }
+  };
 
   return (
     <div className='flex header'>
-     
-        <div className='absolute text-white top-8 text-2xl right-12 cursor-pointer z-10 '>
-           <span style={{display: projects ? "none" : "flex"}}>{showMenu ? <X className='icon' onClick={closeMenu} /> : <Menu onClick={openMenu}  /> }</span>
-        </div>
+      <div className='absolute text-white top-8 text-2xl right-12 cursor-pointer z-10'>
+        <span>{showMenu ? <X onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />}</span>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

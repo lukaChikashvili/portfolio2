@@ -89,23 +89,24 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("showMenu:", showMenu);
     if (showMenu) {
-      gsap.to(".text", {
+      gsap.to('.text', {
         opacity: 0,
-        display: "none",
         duration: 1.5,
         ease: "power2.inOut",
+        onComplete: () => {
+          gsap.set('.text', { display: 'none' });
+        }
       });
     } else {
-      gsap.to(".text", {
+      gsap.set('.text', { display: 'flex' });
+      gsap.to('.text', {
         opacity: 1,
-        display: "flex",
         duration: 1.5,
-        ease: "power2.inOut",
+        ease: "power2.inOut"
       });
     }
-
+  
     if (closed) {
       gsap.to(".text", {
         opacity: 0,
@@ -116,28 +117,54 @@ function App() {
           setProjects(true);
           setShowMenu(false);
           setClosed(true);
-        },
+        }
       });
     }
-
+  
     if (aboutPage) {
-      gsap.to(".title, .title2, .text", {
+      gsap.to(".title, .title2", {
         opacity: 0,
-        pointerEvents: "none",
+        pointerEvents: 'none',
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
         duration: 1.5,
         ease: "power2.inOut",
       });
-    } else {
+  
+      gsap.to('.text', {
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.set('.text', { display: 'none', pointerEvents: 'none' });
+        }
+      });
+    } else if (!showMenu ) {  
+      gsap.set(".title, .title2, .text", { display: 'flex', pointerEvents: 'auto' });
       gsap.to(".title, .title2, .text", {
         opacity: 1,
-        pointerEvents: "auto",
+        duration: 1.5,
+        ease: "power2.inOut",
+        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+      });
+    }
+    
+
+    if(projects) {
+      gsap.to(".title, .title2, .text", {
+        opacity: 0,
+        pointerEvents: 'none',
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
         duration: 1.5,
         ease: "power2.inOut",
+        onComplete: () => {
+          setProjects(true);
+          setShowMenu(false);
+          setClosed(true);
+        }
       });
     }
   }, [showMenu, closed, aboutPage]);
+  
 
  
   return (

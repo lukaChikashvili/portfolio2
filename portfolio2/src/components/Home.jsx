@@ -794,7 +794,7 @@ const Home = () => {
           duration: 2,
           ease: 'power2.inOut'
          });
-      }
+      } 
 
 
       if(home) {

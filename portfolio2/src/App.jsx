@@ -89,93 +89,55 @@ function App() {
   };
 
   useEffect(() => {
-     if(showMenu) {
-      gsap.to('.text', {
+    console.log("showMenu:", showMenu);
+    if (showMenu) {
+      gsap.to(".text", {
         opacity: 0,
         display: "none",
         duration: 1.5,
         ease: "power2.inOut",
-       });
-
-       
-     }else {
-      gsap.to('.text', {
+      });
+    } else {
+      gsap.to(".text", {
         opacity: 1,
         display: "flex",
         duration: 1.5,
         ease: "power2.inOut",
-       });
-     }
-    
-     if(closed) {
+      });
+    }
+
+    if (closed) {
       gsap.to(".text", {
         opacity: 0,
         clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
         duration: 1.5,
         ease: "power2.inOut",
         onComplete: () => {
-            setProjects(true); 
-            setShowMenu(false); 
-            setClosed(true); 
-        }
-    });
-     }
+          setProjects(true);
+          setShowMenu(false);
+          setClosed(true);
+        },
+      });
+    }
 
-     if(aboutPage) {
-      gsap.to(".title", {
+    if (aboutPage) {
+      gsap.to(".title, .title2, .text", {
         opacity: 0,
-        pointerEvents: 'none',
+        pointerEvents: "none",
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
         duration: 1.5,
         ease: "power2.inOut",
       });
-
-      gsap.to(".title2", {
-        opacity: 0,
-        pointerEvents: 'none',
-        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
-        duration: 1.5,
-        ease: "power2.inOut",
-        
-      });
-
-      gsap.to('.text', {
-        opacity: 0,
-        display: "flex",
-        pointerEvents: 'none',
-        duration: 1.5,
-        ease: "power2.inOut",
-       });
-     }else {
-      gsap.to(".title", {
+    } else {
+      gsap.to(".title, .title2, .text", {
         opacity: 1,
-        pointerEvents: 'auto',
+        pointerEvents: "auto",
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
         duration: 1.5,
         ease: "power2.inOut",
       });
-  
-      gsap.to(".title2", {
-        opacity: 1,
-        pointerEvents: 'auto',
-        clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
-        duration: 1.5,
-        ease: "power2.inOut",
-      });
-  
-      gsap.to('.text', {
-        opacity: 1,
-        display: "flex",
-        pointerEvents: 'auto',
-        duration: 1.5,
-        ease: "power2.inOut",
-      });
-     }
-
-     
-
+    }
   }, [showMenu, closed, aboutPage]);
-
 
  
   return (

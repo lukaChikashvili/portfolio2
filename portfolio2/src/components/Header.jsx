@@ -13,7 +13,7 @@ const Header = () => {
     
     setShowMenu(false);
     setProjects(false)
-   
+     
    
   
     
@@ -23,6 +23,7 @@ const Header = () => {
   const openMenu = () => {
     setShowMenu(true);
     
+   
   
   }
 

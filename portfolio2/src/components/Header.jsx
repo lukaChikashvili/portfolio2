@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 
 
 const Header = () => {
-  const { setShowMenu, showMenu, setClosed , setReset} = useContext(UserContext);
+  const { setShowMenu, showMenu, setClosed , setReset, projects, aboutPage} = useContext(UserContext);
 
   const toggleMenu = () => {
     if (showMenu) {
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div className='flex header'>
       <div className='absolute text-white top-8 text-2xl right-12 cursor-pointer z-10'>
-        <span>{showMenu ? <X onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />}</span>
+        <span style={{display: projects || aboutPage ? "none" : "flex"}}>{showMenu ? <X onClick={toggleMenu} /> : <Menu onClick={toggleMenu} />}</span>
       </div>
     </div>
   );

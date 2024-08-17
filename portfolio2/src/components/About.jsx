@@ -1,13 +1,22 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 
 import * as THREE from 'three'
 import vertextImage from '../shaders/imageShader/vertextImage.glsl';
 import fragmentImage from '../shaders/imageShader/fragmentImage.glsl'
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
+import gsap from 'gsap'
 
 
 const About = () => {
+
+   useEffect(() => {
+      gsap.to(plane.current.material, {
+         opacity: 1,
+         duration: 2,
+         dealy: 2
+      })
+   }, [])
 
     const texture = useTexture('./picture.png')
    
@@ -34,7 +43,7 @@ const About = () => {
         fragmentShader={fragmentImage}
         uniforms={uniforms.current}
         side={THREE.DoubleSide}
-        
+        visible = {window.innerWidth < 700 ? false : true}
         />
         
        

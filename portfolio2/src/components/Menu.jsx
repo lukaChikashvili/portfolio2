@@ -129,7 +129,7 @@ const Menu = () => {
           <span className='text-base md:text-xl mt-4 md:mt-6'>//004</span>CONTACT
         </h2>
 
-        {contactPage && <div className='absolute bottom-12 left-36 flex gap-8'>
+        {contactPage && <div className='absolute bottom-12 left-12 md:left-36 flex gap-8'>
              <span className='flex gap-4 text-xl cursor-pointer underline-offset-8 duration-500 ease-in hover:underline' onClick={openLink}><Github /> Github</span>
              <span className='flex gap-4 text-xl cursor-pointer underline-offset-8 duration-500 ease-in hover:underline' onClick={openLinkedin}><Linkedin /> LinkedIn</span>
             </div>}

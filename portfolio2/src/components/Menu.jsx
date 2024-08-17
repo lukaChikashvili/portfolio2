@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { UserContext } from '../context/UserContext';
 
 const Menu = () => {
-  const { showMenu, setHome, setAbout, setMyProject, setContact, setProjects, reset, setReset, setClosed, setShowMenu, setChangePosition } = useContext(UserContext);
+  const { showMenu, setHome, setAbout, setMyProject, setContact, setProjects, setShowMenu,  setReset, setClosed, setAboutPage } = useContext(UserContext);
 
   useEffect(() => {
     if (showMenu) {
@@ -39,6 +39,11 @@ const Menu = () => {
     });
   };
 
+  const openAbout = () => {
+    setAboutPage(true);
+    setShowMenu(false);
+  }
+
 
 
   return (
@@ -52,7 +57,9 @@ const Menu = () => {
       </h2>
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 
           onPointerEnter={() => setAbout(true)} 
-          onPointerLeave={() => setAbout(false)}>
+          onPointerLeave={() => setAbout(false)}
+          onClick={openAbout}
+          >
         <span className='text-base md:text-xl mt-4 md:mt-6'>//002</span>ABOUT 
       </h2>
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { UserContext } from '../context/UserContext';
+import { Github, Linkedin } from 'lucide-react';
 
 const Menu = () => {
   const {
@@ -14,7 +15,9 @@ const Menu = () => {
     setShowMenu,
     setReset,
     setClosed,
-    setAboutPage
+    setAboutPage,
+    setContactPage,
+    contactPage
   } = useContext(UserContext);
 
   const [currentPage, setCurrentPage] = useState('menu');
@@ -73,7 +76,7 @@ const Menu = () => {
   };
 
   const goToMenu = () => {
-    gsap.to('.about', { // Assuming you have an '.about' class for the About page
+    gsap.to('.about', { 
       opacity: 0,
       clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
       duration: 1.5,
@@ -85,6 +88,20 @@ const Menu = () => {
       }
     });
   };
+
+
+  const handleContact = () => {
+    setContactPage(!contactPage);
+  }
+
+  const openLink = () => {
+    window.open('https://github.com/lukaChikashvili', "_blank", "noopener,noreferrer")
+  }
+
+  const openLinkedin = () => {
+    window.open('https://www.linkedin.com/in/luka-chikashvili/', "_blank", "noopener,noreferrer")
+  }
+
 
   return (
     currentPage === 'menu' ? (
@@ -108,15 +125,22 @@ const Menu = () => {
         </h2>
         <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]'
             onPointerEnter={() => setContact(true)}
-            onPointerLeave={() => setContact(false)}>
+            onPointerLeave={() => setContact(false)} onClick={handleContact}>
           <span className='text-base md:text-xl mt-4 md:mt-6'>//004</span>CONTACT
         </h2>
+
+        {contactPage && <div className='absolute bottom-12 left-36 flex gap-8'>
+             <span className='flex gap-4 text-xl cursor-pointer underline-offset-8 duration-500 ease-in hover:underline' onClick={openLink}><Github /> Github</span>
+             <span className='flex gap-4 text-xl cursor-pointer underline-offset-8 duration-500 ease-in hover:underline' onClick={openLinkedin}><Linkedin /> LinkedIn</span>
+            </div>}
       </div>
     ) : (
       currentPage === 'about' && (
         <div className='about'>
         
           <button onClick={goToMenu}>Back to Menu</button>
+
+          
         </div>
       )
     )

@@ -31,12 +31,15 @@ const UserProvider = ({ children }) => {
    // aboutpage
    const [aboutPage, setAboutPage] = useState(false);
 
+   // reset spheres
+   const [reset, setReset] = useState(false);
+
     return (
         <UserContext.Provider value = {{ changePosition, 
         setChangePosition, changeTitle, setChangeTitle, projects, setProjects,
         currentProjectIndex, setCurrentProjectIndex, hideText, setHideText,
         showMenu, setShowMenu, home, setHome, about, setAbout, myProject, setMyProject,
-         contact, setContact,
+         contact, setContact, reset, setReset,
         closed, setClosed, aboutPage, setAboutPage
         }}>
           {children}

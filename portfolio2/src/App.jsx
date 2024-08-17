@@ -12,7 +12,7 @@ import AboutMe from "./components/AboutMe";
 
 
 function App() {
-  const { setChangePosition, setProjects, projects , showMenu, closed, setShowMenu, setClosed, setAboutPage, aboutPage } = useContext(UserContext);
+  const { setChangePosition, setProjects, projects ,reset,  setReset, showMenu, closed, setShowMenu, setClosed, setAboutPage, aboutPage } = useContext(UserContext);
   const [showLoader, setShowLoader] = useState(true);
 
  
@@ -160,6 +160,7 @@ function App() {
           setProjects(true);
           setShowMenu(false);
           setClosed(true);
+    
         }
       });
     }

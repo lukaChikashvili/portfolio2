@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { UserContext } from '../context/UserContext';
 
 const Menu = () => {
-  const { showMenu, setHome, setAbout, setMyProject, setContact, setProjects, closed, setClosed, setShowMenu } = useContext(UserContext);
+  const { showMenu, setHome, setAbout, setMyProject, setContact, setProjects, reset, setReset, setClosed, setShowMenu, setChangePosition } = useContext(UserContext);
 
   useEffect(() => {
     if (showMenu) {
@@ -34,21 +34,19 @@ const Menu = () => {
       onComplete: () => {
         setProjects(true);
         setClosed(true);
+       setReset(false);
       },
     });
   };
 
-  const goToHome = () => {
-    setShowMenu(false);
 
-  }
 
   return (
     <div className='absolute w-full h-screen top-0 left-0 flex flex-col gap-8 items-start justify-center px-12 md:px-36 text-5xl md:text-7xl text-white menu'>
       <h2 className='flex items-center gap-2 md:gap-4 opacity-0 cursor-pointer duration-500 ease hover:text-[#31363F]' 
           onPointerEnter={() => setHome(true)} 
           onPointerLeave={() => setHome(false)}
-          onClick={goToHome}
+         
           >
         <span className='text-base md:text-xl mt-4 md:mt-6'>//001</span>HOME
       </h2>

@@ -8,7 +8,8 @@ import * as THREE from 'three'
 
 const Home = () => {
 
-  const { changePosition, projects, currentProjectIndex, showMenu, about , home, myProject, contact, aboutPage} = useContext(UserContext);
+  const { changePosition, projects, currentProjectIndex,
+     showMenu, about , home, myProject, contact, aboutPage, reset, setReset} = useContext(UserContext);
 
   let first = useRef();
   let second = useRef();
@@ -797,6 +798,13 @@ const Home = () => {
       } 
 
 
+
+
+
+
+
+
+
       if(home) {
         gsap.to(first.current.position, {
           z: -4,
@@ -1215,7 +1223,8 @@ const Home = () => {
          });
       }
 
-      
+
+
       
 
   }, [changePosition, projects, currentProjectIndex, showMenu, about, home, myProject, contact, aboutPage]);

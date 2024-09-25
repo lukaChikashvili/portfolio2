@@ -47,6 +47,7 @@ const ProjectName = ({ projects }) => {
     const githubLinks = [
       "https://github.com/lukaChikashvili/MixMaster",
       "https://github.com/lukaChikashvili/neoWriters2",
+      "https://github.com/lukaChikashvili/3D-planets",
       "https://github.com/lukaChikashvili/EternalMemories",
       "https://github.com/lukaChikashvili/Circus-Mircus",
       "https://github.com/lukaChikashvili/vangadamus",
@@ -61,6 +62,7 @@ const ProjectName = ({ projects }) => {
     const liveLinks = [
       "https://mix-master-seven.vercel.app/",
       "https://neowriters-front.onrender.com",
+      "https://3-d-planets.vercel.app/",
       "https://eternal-memories.onrender.com/",
       "https://circus-mircus.netlify.app/",
       "https://vangadamus.vercel.app/",

@@ -220,6 +220,7 @@ function App() {
       {projects && <ProjectName projects={[
     { name: 'MixMaster', stacks: ['React', 'Three.js', 'Tailwind.css', 'MaterialUI'] },
     { name: 'NeoWriters', stacks: ['React', 'Tailwind.css', 'Node.js',  'MongoDB'] },
+    { name: 'Planetarium X', stacks: ['Three.js', 'GLSL', 'CSS',  'GSAP'] },
     { name: 'Eternal Memories', stacks: ['React', 'Three.js', 'Tailwind.css',  'Node.js',  'MongoDB'] },
     { name: 'Circus Mircus', stacks: ['Next.js', 'Typescript', 'Tailwind.css',  'GSAP'] },
     { name: 'Vangadamus', stacks: ['React', 'Typescript', 'Three.js',  'React-three/rapier'] },
